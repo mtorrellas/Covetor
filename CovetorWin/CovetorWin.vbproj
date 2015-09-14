@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1A35382-E05E-4080-B343-5C92638F8F8B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CovetorWin.My.MyApplication</StartupObject>
+    <RootNamespace>CovetorWin</RootNamespace>
+    <AssemblyName>CovetorWin</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CovetorWin.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CovetorWin.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Globalization" />
+    <Import Include="System.Threading" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acerca.Designer.vb">
+      <DependentUpon>Acerca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Acerca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Configuracion\ComunidadConfig.Designer.vb">
+      <DependentUpon>ComunidadConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\ComunidadConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ConexionSQL.Designer.vb">
+      <DependentUpon>ConexionSQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\ConexionSQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CovetorClases.vb" />
+    <Compile Include="CovetorMDI.Designer.vb">
+      <DependentUpon>CovetorMDI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CovetorMDI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fincas.Designer.vb">
+      <DependentUpon>Fincas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fincas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\GestionACS.Designer.vb">
+      <DependentUpon>GestionACS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\GestionACS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion\GestionGastos.Designer.vb">
+      <DependentUpon>GestionGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\GestionGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Propietarios.Designer.vb">
+      <DependentUpon>Propietarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Propietarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores.Designer.vb">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Acerca.resx">
+      <DependentUpon>Acerca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\ComunidadConfig.resx">
+      <DependentUpon>ComunidadConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\ConexionSQL.resx">
+      <DependentUpon>ConexionSQL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CovetorMDI.resx">
+      <DependentUpon>CovetorMDI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fincas.resx">
+      <DependentUpon>Fincas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\GestionACS.resx">
+      <DependentUpon>GestionACS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion\GestionGastos.resx">
+      <DependentUpon>GestionGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Propietarios.resx">
+      <DependentUpon>Propietarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\DatosMsSQL.DataSetTablas.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatosMsSQL\DatosMsSQL.vbproj">
+      <Project>{a17db62d-2343-4fb3-96b3-04526d273068}</Project>
+      <Name>DatosMsSQL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apagar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AvdLaPaz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuration_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contador de Agua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deshacer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disquete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EscudoTarazona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Euro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filesave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SocioNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AbrirToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CopyToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CutToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HelpToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PasteToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintPreviewToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedoToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UndoToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\SalonVivienda2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SalonVivienda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Piso.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

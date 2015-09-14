@@ -1,0 +1,50 @@
+=============================================
+COMANDO SELECT
+=============================================
+SELECT        Gastos.ID, Gastos.Proveedor AS ProveedorID, Gastos.Fecha, Gastos.Factura, Gastos.Concepto, Gastos.TipoDestino, Gastos.Grupo AS GrupoID, Gastos.Finca AS FincaID, Gastos.Importe, 
+                         Proveedores.RazonSocial, Grupos.Nombre AS Grupo, Fincas.Modelo AS ModeloID, Fincas.Identificacion AS Finca, Modelos.Modelo
+FROM            Gastos LEFT OUTER JOIN
+                         Proveedores ON Gastos.Proveedor = Proveedores.ID LEFT OUTER JOIN
+                         Grupos ON Gastos.Grupo = Grupos.ID LEFT OUTER JOIN
+                         Fincas ON Gastos.Finca = Fincas.ID LEFT OUTER JOIN
+                         Modelos ON Fincas.Modelo = Modelos.Id
+ORDER BY Gastos.Fecha DESC
+
+=============================================
+COMANDO UPDATE
+=============================================
+UPDATE       Gastos
+SET                Proveedor = @Proveedor, Fecha = @Fecha, Factura = @Factura, Concepto = @Concepto, TipoDestino = @TipoDestino, Grupo = @Grupo, Finca = @Finca, Importe = @Importe
+WHERE        (ID = @Original_ID);
+
+SELECT        Gastos.ID, Gastos.Proveedor AS ProveedorID, Gastos.Fecha, Gastos.Factura, Gastos.Concepto, Gastos.TipoDestino, Gastos.Grupo AS GrupoID, Gastos.Finca AS FincaID, Gastos.Importe, 
+                         Proveedores.RazonSocial, Grupos.Nombre AS Grupo, Fincas.Modelo AS ModeloID, Fincas.Identificacion AS Finca, Modelos.Modelo
+FROM            Gastos LEFT OUTER JOIN
+                         Proveedores ON Gastos.Proveedor = Proveedores.ID LEFT OUTER JOIN
+                         Grupos ON Gastos.Grupo = Grupos.ID LEFT OUTER JOIN
+                         Fincas ON Gastos.Finca = Fincas.ID LEFT OUTER JOIN
+                         Modelos ON Fincas.Modelo = Modelos.Id
+WHERE        (Gastos.ID = @ID)
+
+
+
+=============================================
+COMANDO INSERT
+=============================================
+INSERT INTO [Gastos] ([Proveedor], [Fecha], [Factura], [Concepto], [TipoDestino], [Grupo], [Finca], [Importe])
+              VALUES (@Proveedor, @Fecha, @Factura, @Concepto, @TipoDestino, @Grupo, @Finca, @Importe);
+
+SELECT        Gastos.ID, Gastos.Proveedor AS ProveedorID, Gastos.Fecha, Gastos.Factura, Gastos.Concepto, Gastos.TipoDestino, Gastos.Grupo AS GrupoID, Gastos.Finca AS FincaID, Gastos.Importe, 
+                         Proveedores.RazonSocial, Grupos.Nombre AS Grupo, Fincas.Modelo AS ModeloID, Fincas.Identificacion AS Finca, Modelos.Modelo
+FROM            Gastos LEFT OUTER JOIN
+                         Proveedores ON Gastos.Proveedor = Proveedores.ID LEFT OUTER JOIN
+                         Grupos ON Gastos.Grupo = Grupos.ID LEFT OUTER JOIN
+                         Fincas ON Gastos.Finca = Fincas.ID LEFT OUTER JOIN
+                         Modelos ON Fincas.Modelo = Modelos.Id
+WHERE (Gastos.ID = SCOPE_IDENTITY())
+
+
+=============================================
+COMANDO DELETE
+=============================================
+DELETE FROM [Gastos] WHERE (([ID] = @Original_ID))

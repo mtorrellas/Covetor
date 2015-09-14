@@ -1,0 +1,52 @@
+Metodo Select VinculosPlus
+=========================================================================================
+
+SELECT        Vinculos.ID, Vinculos.Grupo, Vinculos.Finca, Vinculos.Coeficiente, Vinculos.Notas, Grupos.Nombre AS [Nombre Grupo], Grupos.Metros AS [Total M2], Fincas.Identificacion, Fincas.Metros AS [Metros Finca], 
+                         Propietarios.Nombre_Completo AS Propietario
+FROM            Vinculos INNER JOIN
+                         Grupos ON Vinculos.Grupo = Grupos.ID INNER JOIN
+                         Fincas ON Vinculos.Finca = Fincas.ID LEFT OUTER JOIN
+                         Propietarios ON Fincas.Propietario = Propietarios.ID
+=========================================================================================
+						 
+Metodo delete VinculosPLUS
+=========================================================================================
+
+DELETE FROM [Vinculos]
+WHERE (([ID] = @Original_ID) AND
+      ([Grupo] = @Original_Grupo) AND
+      ([Finca] = @Original_Finca) AND
+	  ((@IsNull_Coeficiente = 1 AND [Coeficiente] IS NULL) OR ([Coeficiente] = @Original_Coeficiente)))
+
+DELETE FROM Vinculos
+WHERE       (ID = @Original_ID) AND (Grupo = @Original_Grupo) AND (Finca = @Original_Finca) 
+=========================================================================================
+
+Metodo Insert VinculosPLUS
+========================================================================================  
+INSERT INTO [Vinculos] ([Grupo], [Finca], [Coeficiente], [Notas]) 
+VALUES (@Grupo, @Finca, @Coeficiente, @Notas);
+
+SELECT        Vinculos.ID, Vinculos.Grupo, Vinculos.Finca, Vinculos.Coeficiente, Vinculos.Notas, Grupos.Nombre AS [Nombre Grupo], Grupos.Metros AS [Total M2], Fincas.Identificacion, Fincas.Metros AS [Metros Finca], 
+                         Propietarios.Nombre_Completo AS Propietario
+FROM            Vinculos INNER JOIN
+                         Grupos ON Vinculos.Grupo = Grupos.ID INNER JOIN
+                         Fincas ON Vinculos.Finca = Fincas.ID LEFT OUTER JOIN
+                         Propietarios ON Fincas.Propietario = Propietarios.ID
+WHERE (Vinculos.ID = SCOPE_IDENTITY())	  
+========================================================================================
+
+Metodo Update VinculosPLUS
+=========================================================================================
+UPDATE [Vinculos] SET [Grupo] = @Grupo, [Finca] = @Finca, [Coeficiente] = @Coeficiente, [Notas] = @Notas
+WHERE ( ([ID] = @Original_ID) AND 
+        ([Grupo] = @Original_Grupo) AND
+        ([Finca] = @Original_Finca) );
+
+SELECT        Vinculos.ID, Vinculos.Grupo, Vinculos.Finca, Vinculos.Coeficiente, Vinculos.Notas, Grupos.Nombre AS [Nombre Grupo], Grupos.Metros AS [Total M2], Fincas.Identificacion, Fincas.Metros AS [Metros Finca], 
+                         Propietarios.Nombre_Completo AS Propietario
+FROM            Vinculos INNER JOIN
+                         Grupos ON Vinculos.Grupo = Grupos.ID INNER JOIN
+                         Fincas ON Vinculos.Finca = Fincas.ID LEFT OUTER JOIN
+                         Propietarios ON Fincas.Propietario = Propietarios.ID
+WHERE (Vinculos.ID = @ID)

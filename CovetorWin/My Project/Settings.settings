@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="CovetorConexion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="D:\Proyectos Visual Studio\BasedeDatos\DES_Covetor.mdf";Integrated Security=True;Connect Timeout=30</Value>
+    </Setting>
+    <Setting Name="Autor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Miguel Angel Torrellas Delgado</Value>
+    </Setting>
+    <Setting Name="PosicionMDI" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="SizeMDI" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">800, 600</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
